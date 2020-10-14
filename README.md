@@ -20,4 +20,5 @@ One approach is to treat a sample of human cells with the drug and then analyze 
 - The cellualr responses are measured by two ways: gene expression and cell viability.
 - Gene expression and cell viability are related in someway. 
 - The cell viability of contorl samples is sigfinicantly different from the that of treated samples.
-- There is no significant difference in cell viability among the 100 cell lines in the control samples
+- There is no significant difference in cell viability and gene expression among the 100 cell lines in the control samples.
+    - Because the controls have little impact on the cells, so the dose and time don’t have a significant impact on the gene expression and cell viability data for controls. 
