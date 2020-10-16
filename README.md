@@ -16,9 +16,25 @@ One approach is to treat a sample of human cells with the drug and then analyze 
 **g-#:** signify gene expression data. There are 772 gene features for each sig_id. Every expression data describes the degree to which a gene's expression is increased or decreased in response to a chemical perturbagen.<br>
 **c-#:** signify cell viability data. There are 100 cell lines for each sig_id, which are assessed collectively by PRISM (Profiling Relative Inhibition Simultaneously in Mixture).<br> 
 
+## Key Concepts Explained
+**L1000 assay:** a high-throughput gene expression assay that measures the mRNA transcript abundance of 978 "landmark" genes from human cells. 
+
 ## Initial Thoughts & Hypotheses
+### Thoughts
 - The cellualr responses are measured by two ways: gene expression and cell viability.
 - Gene expression and cell viability are related in someway. 
 - The cell viability of contorl samples is sigfinicantly different from the that of treated samples.
 - There is no significant difference in cell viability and gene expression among the 100 cell lines in the control samples.
     - Because the controls have little impact on the cells, so the dose and time don’t have a significant impact on the gene expression and cell viability data for controls. 
+
+### Hypotheses
+Gene expressions data in controls are the same over time
+$H_0$: The average gene expressions in control with dose 2 are the same for 24 vs. 48 hours.<br>
+$H_a$: The average gene expressions in control with dose 2 are significantly different for 24 vs. 48 hours.<br>
+
+
+## Reference
+- [**Mechanisms of Action (MoA) Prediction Description**](https://www.kaggle.com/c/lish-moa/overview/description)
+- [**Connectopedia**](https://clue.io/connectopedia/glossary)
+- [**Corsello et al. “Discovering the anticancer potential of non-oncology drugs by systematic viability profiling,” Nature Cancer, 2020**](https://doi.org/10.1038/s43018-019-0018-6)
+- [**Subramanian et al. “A Next Generation Connectivity Map: L1000 Platform and the First 1,000,000 Profiles,” Cell, 2017**](https://doi.org/10.1016/j.cell.2017.10.049)
