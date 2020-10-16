@@ -28,10 +28,12 @@ One approach is to treat a sample of human cells with the drug and then analyze 
     - Because the controls have little impact on the cells, so the dose and time don’t have a significant impact on the gene expression and cell viability data for controls. 
 
 ### Hypotheses
-Gene expressions data in controls are the same over time
-$H_0$: The average gene expressions in control with dose 2 are the same for 24 vs. 48 hours.<br>
-$H_a$: The average gene expressions in control with dose 2 are significantly different for 24 vs. 48 hours.<br>
+#### Gene expressions data in controls are the same over time
+H_0: The average gene expressions in control with dose 2 are the same at 24 vs. 48 hours.<br>
+H_a: The average gene expressions in control with dose 2 are significantly different at 24 vs. 48 hours.<br>
 
+H_0: The average gene expressions in control with dose 2 are the same at 48 vs. 72 hours.<br>
+H_a: The average gene expressions in control with dose 2 are significantly different at 48 vs. 72 hours.<br>
 
 ## Reference
 - [**Mechanisms of Action (MoA) Prediction Description**](https://www.kaggle.com/c/lish-moa/overview/description)
