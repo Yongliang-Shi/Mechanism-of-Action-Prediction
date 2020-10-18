@@ -8,7 +8,7 @@ One approach is to treat a sample of human cells with the drug and then analyze 
 
 ## Acknowledgements
 
-## Data Dictionary
+## Data Dictionary[1,2]
 **sig_id:** A Connectivity Map unique identification number assigned to each signature generated from L1000 assay. A signature is the entire vector of differential gene expression values, one per gene. The signature provides a representation of the biological response.<br>
 **cp_type:** indicates how the samples are treated: either with small-molecule compounds(trt_cp) or with a control perturbation (ctrl_vehicle). Control pertubations have no MoAs.<br> 
 **cp_time:** indicates treatment time: 24, 48, and 72 hours.<br> 
@@ -19,11 +19,22 @@ One approach is to treat a sample of human cells with the drug and then analyze 
 ## Key Concepts Explained
 **L1000 assay:** a high-throughput gene expression assay that measures the mRNA transcript abundance of 978 "landmark" genes from human cells. 
 
+## Data Processing Workflow for Sig_id[2,3,4]
+1. Collect raw data: the bead identities (two genes per bead) and the fluorescent intensity for every bead.<br>
+2. Peak deconvolution: assign the correct expression level to each of the two genes whose transcripts bind to beads of the same color.<br>
+3. Construct a calibration curve based on the control transcripts to rescale the experimental data.<br>
+4. Use QNORM to standardize the shape of th expression profile distribution on each plate.<br>
+5. Use quantile normalization to standardize the data across plates.<br> 
+    - It yields the expression values of the 872 genes, of which 772 belong to g-0 to g-772. The rest of the 100 is for c-0 and c-99.<br> 
+6. The expression values, combined with the treatment type, time and dose are assigned to one unique sig_id. 
+
 ## Initial Thoughts & Hypotheses
 ### Thoughts
 - The cellualr responses are measured by two methods: 
     - Gene expression by L1000 assay.
     - Cell viability by PRISM.
+    - Both gene expression and cell viability are estimated by the mRNA abundance. 
+    - The barcodes are 24-nt long DNA. 
 - Gene expression and cell viability are related in someway. 
 - The cell viability of contorl samples is sigfinicantly different from the that of treated samples.
 - There is no significant difference in cell viability and gene expression among the 100 cell lines in the control samples.
@@ -42,7 +53,7 @@ H_0: The gene expression in one observation are normally distributed.<br>
 H_a: The gene expression in one observation are not normally distributed.<br> 
 
 ## Reference
-- [**Mechanisms of Action (MoA) Prediction Description**](https://www.kaggle.com/c/lish-moa/overview/description)
-- [**Connectopedia**](https://clue.io/connectopedia/glossary)
-- [**Corsello et al. “Discovering the anticancer potential of non-oncology drugs by systematic viability profiling,” Nature Cancer, 2020**](https://doi.org/10.1038/s43018-019-0018-6)
-- [**Subramanian et al. “A Next Generation Connectivity Map: L1000 Platform and the First 1,000,000 Profiles,” Cell, 2017**](https://doi.org/10.1016/j.cell.2017.10.049)
+1. [**Mechanisms of Action (MoA) Prediction Description**](https://www.kaggle.com/c/lish-moa/overview/description)
+2. [**Connectopedia**](https://clue.io/connectopedia/glossary)
+3. [**Corsello et al. “Discovering the anticancer potential of non-oncology drugs by systematic viability profiling,” Nature Cancer, 2020**](https://doi.org/10.1038/s43018-019-0018-6)
+4. [**Subramanian et al. “A Next Generation Connectivity Map: L1000 Platform and the First 1,000,000 Profiles,” Cell, 2017**](https://doi.org/10.1016/j.cell.2017.10.049)
