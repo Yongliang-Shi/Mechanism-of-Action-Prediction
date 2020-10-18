@@ -9,7 +9,7 @@ One approach is to treat a sample of human cells with the drug and then analyze 
 ## Acknowledgements
 
 ## Data Dictionary
-**sig_id:** A Connectivity Map unique identification number assigned to each signature generated from L1000 assay. A signature is the entire vector of differential expression values, one per gene. The signature provides a representation of the biological response. Besides gene expression data, <br>
+**sig_id:** A Connectivity Map unique identification number assigned to each signature generated from L1000 assay. A signature is the entire vector of differential gene expression values, one per gene. The signature provides a representation of the biological response.<br>
 **cp_type:** indicates how the samples are treated: either with small-molecule compounds(trt_cp) or with a control perturbation (ctrl_vehicle). Control pertubations have no MoAs.<br> 
 **cp_time:** indicates treatment time: 24, 48, and 72 hours.<br> 
 **cp_does:** indicates treatment does: high or low.<br>
@@ -21,7 +21,9 @@ One approach is to treat a sample of human cells with the drug and then analyze 
 
 ## Initial Thoughts & Hypotheses
 ### Thoughts
-- The cellualr responses are measured by two ways: gene expression and cell viability.
+- The cellualr responses are measured by two methods: 
+    - Gene expression by L1000 assay.
+    - Cell viability by PRISM.
 - Gene expression and cell viability are related in someway. 
 - The cell viability of contorl samples is sigfinicantly different from the that of treated samples.
 - There is no significant difference in cell viability and gene expression among the 100 cell lines in the control samples.
@@ -36,8 +38,8 @@ H_0: The average gene expressions in control with dose 2 are the same at 48 vs. 
 H_a: The average gene expressions in control with dose 2 are significantly different at 48 vs. 72 hours.<br>
 
 #### Gene expressions in one observation are normally distributed. 
-H_0: The gene expression in one observation are normally distributed.
-H_a: The gene expression in one observation are not normally distributed. 
+H_0: The gene expression in one observation are normally distributed.<br>
+H_a: The gene expression in one observation are not normally distributed.<br> 
 
 ## Reference
 - [**Mechanisms of Action (MoA) Prediction Description**](https://www.kaggle.com/c/lish-moa/overview/description)
