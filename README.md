@@ -31,14 +31,19 @@ One approach is to treat a sample of human cells with the drug and then analyze 
 ## Initial Thoughts & Hypotheses
 ### Thoughts
 - The cellualr responses are measured by two methods: 
-    - Gene expression by L1000 assay.
-    - Cell viability by PRISM.
-    - Both gene expression and cell viability are estimated by the mRNA abundance. 
-    - The barcodes are 24-nt long DNA. 
-- Gene expression and cell viability are related in someway. 
-- The cell viability of contorl samples is sigfinicantly different from the that of treated samples.
-- There is no significant difference in cell viability and gene expression among the 100 cell lines in the control samples.
-    - Because the controls have little impact on the cells, so the dose and time don’t have a significant impact on the gene expression and cell viability data for controls. 
+    - Gene expression (G) by L1000 assay.
+    - Cell viability (C) by PRISM.
+    - Both G and C are measured by the mRNA abundance. 
+    - The data is collected and go through the processing workflow before analysis.
+- About controls
+    - The G and C in controls are sigfinicantly different from that of the treated samples.
+    - Because the doublling times of each cell line are different, so significant difference are among C in controls. (Clustering?)
+    - Because the controls have little impact on the cells, so the dose and time don’t have a significant impact on G and C in controls
+- About gene expression and cell viability
+    -  G and C are related in someway
+- About targets
+    - The drugs are labeled with the protein they are targeting and how they influence the protein. 
+    - The top 3 drug types are inhibitor, antagonist, and agonist. 
 
 ### Hypotheses
 #### Gene expressions data in controls are the same over time
